@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 562" width="900" height="562" role="img" aria-label="英文契約書のドラフティングとレビューを表す抽象ビジュアル">
+  <defs>
+    <linearGradient id="cbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf8f2"/><stop offset="1" stop-color="#eae4d8"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2=".4" y2="1">
+      <stop offset="0" stop-color="#fdfbf6"/><stop offset="1" stop-color="#e9e6dd"/>
+    </linearGradient>
+    <linearGradient id="paper2" x1="0" y1="0" x2=".3" y2="1">
+      <stop offset="0" stop-color="#f1eee6"/><stop offset="1" stop-color="#d8d5cc"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8cf98"/><stop offset=".5" stop-color="#a9853f"/><stop offset="1" stop-color="#7d6027"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx=".3" cy=".1" r=".8">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="drop" x="-30%" y="-30%" width="170%" height="170%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#7a6f5c" flood-opacity=".28"/>
+    </filter>
+    <filter id="cgrain">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".06"/></feComponentTransfer>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="csoft"><feGaussianBlur stdDeviation="7"/></filter>
+    <clipPath id="cframe"><rect width="900" height="562"/></clipPath>
+    <!-- 本文の行（テキストの抽象化） -->
+    <g id="lines" fill="#5b6480" opacity=".62">
+      <rect width="196" height="4.6" rx="2.3"/>
+      <rect y="15" width="228" height="4.6" rx="2.3"/>
+      <rect y="30" width="168" height="4.6" rx="2.3"/>
+      <rect y="45" width="214" height="4.6" rx="2.3"/>
+      <rect y="60" width="132" height="4.6" rx="2.3"/>
+    </g>
+  </defs>
+
+  <g clip-path="url(#cframe)"><g transform="translate(0 56)">
+    <rect x="0" y="-70" width="900" height="700" fill="url(#cbg)"/>
+    <rect x="0" y="-70" width="900" height="700" fill="url(#lamp)"/>
+
+    <!-- 奥の一枚 -->
+    <g transform="translate(520 62) rotate(6)" filter="url(#drop)">
+      <rect width="300" height="392" rx="4" fill="url(#paper2)"/>
+      <g transform="translate(34 52)"><use href="#lines" opacity=".5"/></g>
+      <g transform="translate(34 152)"><use href="#lines" opacity=".5"/></g>
+      <g transform="translate(34 252)"><use href="#lines" opacity=".5"/></g>
+    </g>
+
+    <!-- 手前の一枚（主役） -->
+    <g transform="translate(288 40) rotate(-3.2)" filter="url(#drop)">
+      <rect width="318" height="410" rx="4" fill="url(#paper)"/>
+      <!-- ヘッダー -->
+      <text x="34" y="54" font-family="Georgia,serif" font-size="15.5" letter-spacing="3.6" fill="#1f2a54">AGREEMENT</text>
+      <rect x="34" y="66" width="52" height="2" fill="#a9853f"/>
+      <text x="34" y="92" font-family="Georgia,serif" font-size="9.5" letter-spacing="1.8" fill="#8b93a8">JOINT VENTURE · CROSS-BORDER</text>
+
+      <!-- 条項ブロック -->
+      <g transform="translate(34 116)">
+        <text font-family="Georgia,serif" font-size="10" letter-spacing="1.4" fill="#1f2a54">ARTICLE 8 &#160;GOVERNING LAW</text>
+        <g transform="translate(0 12)"><use href="#lines"/></g>
+      </g>
+
+      <!-- 金のブラケットで強調された重要条項 -->
+      <g transform="translate(24 224)">
+        <path d="M0 -12 h11 M0 -12 V86 M0 86 h11" fill="none" stroke="url(#gold)" stroke-width="2.2" stroke-linecap="round"/>
+        <rect x="8" y="-14" width="278" height="102" rx="4" fill="#a9853f" opacity=".075"/>
+        <g transform="translate(20 0)">
+          <text font-family="Georgia,serif" font-size="10" letter-spacing="1.4" fill="#7d6027">ARTICLE 12 &#160;LIABILITY &amp; INDEMNITY</text>
+          <g transform="translate(0 12)"><use href="#lines" fill="#3c4664" opacity=".78"/></g>
+        </g>
+      </g>
+
+      <!-- レッドライン（修正提案） -->
+      <g transform="translate(58 336)">
+        <rect width="150" height="4.6" rx="2.3" fill="#b85c5c" opacity=".5"/>
+        <path d="M-4 2.3 h160" stroke="#b85c5c" stroke-width="1" opacity=".85"/>
+        <rect y="15" width="196" height="4.6" rx="2.3" fill="#a9853f" opacity=".85"/>
+        <rect y="30" width="118" height="4.6" rx="2.3" fill="#5b6480" opacity=".5"/>
+      </g>
+
+      <!-- 署名欄 -->
+      <g transform="translate(34 392)">
+        <path d="M0 0 h108" stroke="#9aa0b4" stroke-width="1"/>
+        <path d="M6 -6 c 16 -16, 28 10, 44 -6 s 22 12, 40 -4" fill="none" stroke="#1f2a54" stroke-width="1.8"
+              stroke-linecap="round" stroke-dasharray="150" stroke-dashoffset="150">
+          <animate attributeName="stroke-dashoffset" from="150" to="0" dur="2.4s" begin=".6s" fill="freeze"/>
+        </path>
+      </g>
+    </g>
+
+    <!-- 金の封蝋（信頼の象徴） -->
+    <g transform="translate(596 372)">
+      <circle r="41" fill="url(#gold)" opacity=".96"/>
+      <circle r="41" fill="none" stroke="#fff2d6" stroke-opacity=".45" stroke-width="1"/>
+      <circle r="31" fill="none" stroke="#6d5321" stroke-opacity=".5" stroke-width="1.4"/>
+      <g fill="none" stroke="#4a3a15" stroke-opacity=".55" stroke-width="1.2">
+        <circle r="19"/><circle r="11"/>
+      </g>
+      <g fill="#4a3a15" fill-opacity=".5">
+        <circle cy="-15" r="1.8"/><circle cy="15" r="1.8"/><circle cx="-15" r="1.8"/><circle cx="15" r="1.8"/>
+      </g>
+    </g>
+
+    <!-- 見出し -->
+    <g font-family="Georgia,serif">
+      <text x="112" y="104" font-size="13" letter-spacing="3.4" fill="#a9853f">DRAFTING &amp; REVIEW</text>
+      <text x="112" y="150" font-size="30" letter-spacing="1" fill="#1f2a54">English</text>
+      <text x="112" y="188" font-size="30" letter-spacing="1" fill="#a9853f">contracts</text>
+    </g>
+
+    </g>
+    <rect width="900" height="562" filter="url(#cgrain)" fill="#8a8172" opacity=".30"/>
+    <rect width="900" height="562" fill="none" stroke="#a2937c" stroke-opacity=".18" stroke-width="26" filter="url(#csoft)"/>
+  </g>
+</svg>

@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海外ビジネスサポート｜海外進出・英文書作成支援・翻訳・研修｜東京響働ビジネスサポート合同会社</title>
+<meta name="description" content="海外進出支援、海外法令リサーチ、各種英文書等の作成サポート・翻訳、事業リスク（ビジネス上の観点）からの検討、ビジネス英語研修、ASEAN（殊にタイ）の現地人材紹介を業務委託形式でご提供。当社は法律事務所ではありません。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   業務委託リーガルサービス LP  —  白ベース / 大きめ文字 / 濃紺+ゴールド
+   ============================================================ */
+:root{
+  --bg:#ffffff; --bg-soft:#f7f6f3;
+  --ink:#1a1c23; --ink-soft:#54586a;
+  --navy:#1f2a54; --navy-2:#2c3a6e;
+  --gold:#a9853f; --gold-soft:#caa864;
+  --line:#e6e3dc;
+  --maxw:1080px;
+  --pad-sec:clamp(64px,10vw,120px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Sans JP",sans-serif;
+  font-size:clamp(17px,2.2vw,19px); line-height:1.9;
+  -webkit-font-smoothing:antialiased; letter-spacing:.01em;
+}
+h1,h2,h3{font-family:"Noto Serif JP",serif; line-height:1.4; color:var(--navy); font-weight:600}
+a{color:inherit; text-decoration:none}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(20px,5vw,40px)}
+.sec{padding:var(--pad-sec) 0}
+.eyebrow{display:inline-flex; align-items:center; gap:12px; color:var(--gold);
+  font-family:"Noto Sans JP",sans-serif; font-weight:700; font-size:14px; letter-spacing:.18em;
+  text-transform:uppercase; margin-bottom:18px}
+.eyebrow::before{content:""; width:40px; height:2px; background:var(--gold)}
+.sec-title{font-size:clamp(26px,4vw,38px); margin-bottom:20px}
+.lead{color:var(--ink-soft); max-width:44em}
+
+/* reveal animation */
+.reveal{opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s ease}
+.reveal.in{opacity:1; transform:none}
+
+/* ---------- Header ---------- */
+header{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.86);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+.nav{display:flex; align-items:center; justify-content:space-between; height:72px}
+.brand{font-family:"Noto Serif JP",serif; font-weight:700; font-size:20px; color:var(--navy); letter-spacing:.02em}
+.brand span{color:var(--gold)}
+.nav-links{display:flex; gap:30px; align-items:center; font-size:15px; font-weight:500}
+.nav-links a{color:var(--ink-soft); transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{padding:10px 20px; background:var(--navy); color:#fff!important; border-radius:8px; font-size:14px}
+.nav-cta:hover{background:var(--navy-2)}
+@media(max-width:720px){ .nav-links a:not(.nav-cta){display:none} }
+
+/* ---------- Hero ---------- */
+.hero{padding:clamp(34px,5vw,66px) 0 var(--pad-sec); position:relative; overflow:hidden}
+.hero::after{content:""; position:absolute; right:-160px; top:-120px; width:520px; height:520px;
+  background:radial-gradient(circle,rgba(31,42,84,.06),transparent 70%); border-radius:50%; z-index:-1}
+.hero h1{font-size:clamp(34px,6vw,60px); font-weight:700; letter-spacing:.01em; margin-bottom:26px}
+.hero h1 .accent{color:var(--gold)}
+.hero .lead{font-size:clamp(18px,2.4vw,21px); margin-bottom:20px; max-width:40em; color:var(--ink)}
+.hero .sub{color:var(--ink-soft); max-width:42em; margin-bottom:38px}
+.hero-cta{display:flex; gap:16px; flex-wrap:wrap}
+.btn{display:inline-flex; align-items:center; gap:10px; padding:16px 32px; border-radius:10px;
+  font-weight:700; font-size:16px; transition:transform .15s, box-shadow .25s, background .2s}
+.btn-primary{background:var(--navy); color:#fff; box-shadow:0 10px 30px rgba(31,42,84,.18)}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:0 16px 40px rgba(31,42,84,.26)}
+.btn-ghost{background:#fff; color:var(--navy); border:1.5px solid var(--gold)}
+.btn-ghost:hover{background:var(--bg-soft)}
+.hero-badges{display:flex; gap:28px; flex-wrap:wrap; margin-top:46px; padding-top:30px; border-top:1px solid var(--line)}
+.hero-badges div{font-size:15px; color:var(--ink-soft)}
+.hero-badges b{display:block; font-family:"Noto Serif JP",serif; font-size:26px; color:var(--navy); font-weight:700}
+
+/* ---------- Merit ---------- */
+.grid{display:grid; gap:24px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:860px){ .grid-3{grid-template-columns:1fr 1fr} }
+@media(max-width:600px){ .grid-3,.grid-2{grid-template-columns:1fr} }
+.card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:34px 30px;
+  transition:transform .2s, box-shadow .25s, border-color .2s}
+.card:hover{transform:translateY(-4px); box-shadow:0 18px 40px rgba(26,28,35,.08); border-color:var(--gold-soft)}
+.card .ico{width:46px; height:46px; border-radius:12px; background:var(--bg-soft);
+  display:flex; align-items:center; justify-content:center; margin-bottom:18px; color:var(--gold)}
+.card .ico svg{width:24px; height:24px; stroke:var(--gold); fill:none; stroke-width:1.6}
+.card h3{font-size:20px; margin-bottom:10px; color:var(--navy)}
+.card p{font-size:16px; color:var(--ink-soft); line-height:1.85}
+
+/* ---------- Services ---------- */
+.bg-soft{background:var(--bg-soft)}
+.svc-list{list-style:none; display:grid; gap:2px; margin-top:36px; border-top:1px solid var(--line)}
+.svc-list li{display:flex; align-items:flex-start; gap:20px; padding:26px 8px; border-bottom:1px solid var(--line);
+  transition:background .2s}
+.svc-list li:hover{background:#fff}
+.svc-num{font-family:"Noto Serif JP",serif; font-weight:700; color:var(--gold); font-size:20px; min-width:44px}
+.svc-txt{font-size:clamp(17px,2vw,19px)}
+.svc-txt b{color:var(--navy)}
+
+/* ---------- Scope ---------- */
+.scope-box{background:#fff; border:1px solid var(--line); border-left:4px solid var(--gold);
+  border-radius:12px; padding:clamp(28px,4vw,44px); margin-top:34px}
+.scope-box p{color:var(--ink); margin-bottom:16px}
+.scope-tags{display:flex; gap:12px; flex-wrap:wrap; margin-top:24px}
+.tag{background:var(--bg-soft); border:1px solid var(--line); border-radius:999px; padding:8px 18px;
+  font-size:15px; color:var(--navy); font-weight:500}
+
+/* ---------- Pricing ---------- */
+.price-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:44px}
+@media(max-width:820px){ .price-grid{grid-template-columns:1fr} }
+.price{background:#fff; border:1px solid var(--line); border-radius:16px; padding:38px 32px; position:relative;
+  transition:transform .2s, box-shadow .25s}
+.price:hover{transform:translateY(-4px); box-shadow:0 20px 50px rgba(26,28,35,.10)}
+.price.feature{border:2px solid var(--navy); box-shadow:0 20px 50px rgba(31,42,84,.14)}
+.price.feature::before{content:"人気"; position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+  background:var(--gold); color:#fff; font-size:13px; font-weight:700; padding:5px 16px; border-radius:999px; letter-spacing:.08em}
+.price .hours{font-family:"Noto Serif JP",serif; font-size:22px; color:var(--navy); font-weight:600}
+.price .hours small{display:block; font-family:"Noto Sans JP"; font-size:14px; color:var(--ink-soft); font-weight:400; margin-top:4px}
+.price .amount{font-family:"Noto Serif JP",serif; font-size:clamp(36px,5vw,46px); color:var(--navy); font-weight:700;
+  margin:22px 0 4px; line-height:1}
+.price .amount span{font-size:20px}
+.price .tax{font-size:14px; color:var(--ink-soft); margin-bottom:24px}
+.price .per{font-size:15px; color:var(--ink-soft); padding-top:22px; border-top:1px solid var(--line)}
+.price-note{font-size:15px; color:var(--ink-soft); margin-top:26px; line-height:1.9}
+
+/* ---------- Compare ---------- */
+.compare{margin-top:36px; overflow-x:auto}
+.compare table{width:100%; border-collapse:collapse; min-width:520px}
+.compare th,.compare td{text-align:left; padding:20px 22px; border-bottom:1px solid var(--line); font-size:16px}
+.compare th{font-family:"Noto Serif JP",serif; color:var(--navy); font-weight:600; background:var(--bg-soft)}
+.compare td:last-child{font-family:"Noto Serif JP",serif; font-weight:700; color:var(--gold); font-size:19px; white-space:nowrap}
+
+/* ---------- Scroll progress bar ---------- */
+#progress{position:fixed; top:0; left:0; height:3px; width:0; z-index:100;
+  background:linear-gradient(90deg,var(--gold),var(--navy)); box-shadow:0 0 12px rgba(169,133,63,.5); transition:width .1s}
+
+/* ---------- Animated gradient blobs (背景の高度な動き) ---------- */
+.blob{position:absolute; border-radius:50%; filter:blur(70px); z-index:-2; pointer-events:none; opacity:.45; will-change:transform}
+.blob.b1{width:420px; height:420px; background:radial-gradient(circle,#2c3a6e,transparent 70%); top:-120px; right:-80px; animation:blob1 20s ease-in-out infinite}
+.blob.b2{width:360px; height:360px; background:radial-gradient(circle,#a9853f,transparent 70%); bottom:-100px; left:-60px; animation:blob2 24s ease-in-out infinite}
+@keyframes blob1{0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-40px,50px) scale(1.15)}}
+@keyframes blob2{0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(50px,-40px) scale(1.1)}}
+
+/* ---------- 最上部の全幅バンド（第一印象を決める一枚） ---------- */
+.hero-band{position:relative; width:100%; height:clamp(260px,46vh,540px); overflow:hidden; background:#fff}
+.hero-band img{width:100%; height:100%; object-fit:cover; object-position:50% 46%; display:block;
+  animation:bandBreath 26s ease-in-out infinite alternate}
+@keyframes bandBreath{from{transform:scale(1.03)} to{transform:scale(1.10)}}
+/* 下端を白へ溶かし、ページ本体と継ぎ目なく繋ぐ */
+.hero-band::after{content:""; position:absolute; left:0; right:0; bottom:0; height:42%; pointer-events:none;
+  background:linear-gradient(0deg,#fff 4%,rgba(255,255,255,.72) 44%,transparent)}
+/* 光がゆっくり流れる（静止画に"動画的な"生気を与える） */
+.hero-band .sheen{position:absolute; inset:-25% -35%; pointer-events:none;
+  background:linear-gradient(78deg,transparent 33%,rgba(255,247,229,.50) 47%,transparent 61%);
+  animation:sheen 13s ease-in-out infinite}
+@keyframes sheen{0%,100%{transform:translateX(-14%)} 50%{transform:translateX(14%)}}
+@media(prefers-reduced-motion:reduce){ .hero-band img,.hero-band .sheen{animation:none} }
+
+/* ---------- Photos (画像スロット共通) ---------- */
+.photo{position:relative; overflow:hidden; border-radius:16px; background:var(--bg-soft); border:1px solid var(--line)}
+.photo img{width:100%; height:100%; object-fit:cover; display:block; transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.photo:hover img{transform:scale(1.07)}
+.photo .cap{position:absolute; left:0; right:0; bottom:0; padding:16px; color:#fff; font-size:13px; font-weight:700;
+  letter-spacing:.03em; background:linear-gradient(0deg,rgba(8,10,22,.82),rgba(8,10,22,.1) 70%,transparent)}
+.photo .cap small{display:block; font-weight:400; opacity:.85; font-size:11px; margin-top:2px}
+/* 写真の内側に髪の毛一本分の光の縁を置き、額装されたような締まりを出す */
+.photo::after{content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.10), inset 0 -70px 90px -60px rgba(8,10,22,.55)}
+/* オリジナル生成ビジュアル（SVG）はnavy地。読み込み時の白飛びを防ぐ */
+.photo.art{background:#f6f4ef}
+.photo.art img{transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.photo.art:hover img{transform:scale(1.04)}
+.kenburns img{animation:kb 18s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.02) translate(0,0)} to{transform:scale(1.09) translate(-1%,-1.2%)}}
+
+/* ---------- Gallery (多数写真グリッド) ---------- */
+.gallery{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:150px; gap:14px; margin-top:44px;
+  grid-auto-flow:row dense}
+@media(max-width:820px){ .gallery{grid-template-columns:repeat(2,1fr)} }
+.gallery .photo{grid-row:span 1}
+.gallery .g-tall{grid-row:span 2}
+.gallery .g-wide{grid-column:span 2}
+.gallery .g-full{grid-column:1/-1}   /* 締めの全幅バンド */
+@media(max-width:520px){ .gallery .g-wide{grid-column:span 2}
+.gallery .g-full{grid-column:1/-1}   /* 締めの全幅バンド */ }
+
+/* ---------- Achievement banner photo ---------- */
+.achv{overflow:hidden}
+.achv-banner{height:190px; margin:calc(-1 * clamp(26px,3.5vw,36px)) calc(-1 * clamp(26px,3.5vw,36px)) 22px; border-radius:0}
+.achv-banner .cap{font-size:12px}
+
+/* ---------- Marquee (キーワード帯) ---------- */
+.marquee{overflow:hidden; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:16px 0; background:#fff}
+.marquee-track{display:flex; gap:0; white-space:nowrap; width:max-content; animation:scrollx 28s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{font-family:"Noto Serif JP",serif; font-size:18px; color:var(--navy); font-weight:600; padding:0 30px; opacity:.85}
+.marquee span::before{content:"◆"; color:var(--gold); font-size:11px; margin-right:30px; vertical-align:middle}
+@keyframes scrollx{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+
+/* ---------- Hero (network canvas) ---------- */
+#net{position:absolute; inset:0; width:100%; height:100%; z-index:-1; opacity:.55}
+.hero-photo{aspect-ratio:4/5; box-shadow:0 30px 70px rgba(31,42,84,.22)}
+@media(max-width:900px){ .hero-photo{aspect-ratio:4/3; max-height:56vh} }
+.hero-photo.photo{border-radius:20px}
+
+/* ---------- CTA background image ---------- */
+.cta-bg{position:absolute; inset:0; z-index:0; opacity:.22}
+.cta-bg img{width:100%; height:100%; object-fit:cover}
+.cta > *{position:relative; z-index:1}
+
+/* ---------- Hero visual (global reach) ---------- */
+.hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(24px,4vw,56px); align-items:center}
+@media(max-width:900px){ .hero-grid{grid-template-columns:1fr} .hero-art{order:-1} }
+.hero-art{position:relative; aspect-ratio:1/0.92; width:100%}
+.hero-art svg{width:100%; height:100%; display:block; overflow:visible}
+.map-arc{stroke-dasharray:6 8; animation:dash 3s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-140}}
+.node-pulse{transform-origin:center; animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.35; r:5} 50%{opacity:1; r:9}}
+.float-chip{position:absolute; background:#fff; border:1px solid var(--line); border-radius:12px;
+  padding:9px 14px; font-size:13px; font-weight:700; color:var(--navy); box-shadow:0 10px 30px rgba(31,42,84,.12);
+  display:flex; align-items:center; gap:8px; animation:floaty 5s ease-in-out infinite}
+.float-chip i{width:8px; height:8px; border-radius:50%; background:var(--gold); display:inline-block}
+.float-chip.c1{top:6%; left:2%; animation-delay:0s}
+.float-chip.c2{top:24%; right:-2%; animation-delay:.8s}
+.float-chip.c3{bottom:20%; left:-3%; animation-delay:1.6s}
+.float-chip.c4{bottom:2%; right:6%; animation-delay:2.4s}
+@keyframes floaty{0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)}}
+
+/* ---------- Process (海外進出サポートの流れ) ---------- */
+.process{display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-top:48px; position:relative}
+@media(max-width:820px){ .process{grid-template-columns:1fr 1fr} }
+@media(max-width:520px){ .process{grid-template-columns:1fr} }
+.pstep{background:#fff; border:1px solid var(--line); border-radius:16px; padding:26px 20px; text-align:center; position:relative}
+.pstep .pnum{width:44px; height:44px; margin:0 auto 14px; border-radius:50%; background:var(--navy); color:#fff;
+  font-family:"Noto Serif JP",serif; font-weight:700; font-size:18px; display:flex; align-items:center; justify-content:center}
+.pstep .picon{width:34px; height:34px; margin:0 auto 12px; color:var(--gold)}
+.pstep .picon svg{width:34px; height:34px; stroke:var(--gold); fill:none; stroke-width:1.5}
+.pstep h4{font-size:16px; color:var(--navy); margin-bottom:8px; font-family:"Noto Serif JP",serif}
+.pstep p{font-size:13px; color:var(--ink-soft); line-height:1.7}
+.pstep:not(:last-child)::after{content:"→"; position:absolute; right:-12px; top:50%; transform:translateY(-50%);
+  color:var(--gold); font-weight:700; font-size:20px; z-index:2}
+@media(max-width:820px){ .pstep::after{display:none} }
+
+/* ---------- Achievement charts ---------- */
+.chart{margin-top:20px}
+.chart-bars{display:flex; align-items:flex-end; gap:16px; height:200px; padding:14px 6px 0; border-bottom:2px solid var(--line)}
+.bar{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; position:relative}
+.bar-fill{width:100%; max-width:64px; border-radius:8px 8px 0 0; height:0;
+  background:linear-gradient(180deg,var(--navy-2),var(--navy)); transition:height 1.1s cubic-bezier(.2,.8,.2,1)}
+.bar.rival .bar-fill{background:linear-gradient(180deg,#d9c9a3,var(--gold))}
+.chart.in .bar-fill{height:var(--fill)}
+.bar .bval{font-family:"Noto Serif JP",serif; font-weight:700; color:var(--navy); font-size:16px; margin-bottom:6px}
+.bar.rival .bval{color:var(--gold)}
+.bar .blabel{position:absolute; bottom:-30px; font-size:12px; color:var(--ink-soft); text-align:center; width:120%}
+.chart-legend{margin-top:44px; font-size:13px; color:var(--ink-soft); display:flex; gap:20px; flex-wrap:wrap}
+.chart-legend span{display:inline-flex; align-items:center; gap:7px}
+.chart-legend .dot{width:11px; height:11px; border-radius:3px}
+.chart-h{display:grid; gap:16px; margin-top:8px}
+.hbar{display:grid; grid-template-columns:118px 1fr auto; gap:14px; align-items:center}
+@media(max-width:560px){ .hbar{grid-template-columns:96px 1fr; } .hbar b{grid-column:2} }
+.hbar .hlab{font-size:14px; color:var(--ink); font-weight:500}
+.hbar .track{background:var(--bg-soft); border-radius:999px; height:16px; overflow:hidden}
+.hbar .hfill{height:100%; width:0; border-radius:999px; background:linear-gradient(90deg,var(--navy-2),var(--navy));
+  transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.hbar .hfill.danger{background:linear-gradient(90deg,#c98a8a,#b85c5c)}
+.hbar .hfill.win{background:linear-gradient(90deg,#caa864,var(--gold))}
+.chart.in .hfill{width:var(--w)}
+.hbar b{font-family:"Noto Serif JP",serif; color:var(--navy); font-size:15px; white-space:nowrap}
+.gauge{display:flex; align-items:center; gap:22px; margin-top:14px; flex-wrap:wrap}
+.gauge .big{font-family:"Noto Serif JP",serif; font-size:clamp(44px,7vw,64px); color:var(--gold); font-weight:700; line-height:1}
+.gauge .big small{font-size:22px; color:var(--navy)}
+.milestones{display:flex; gap:8px; align-items:center; flex-wrap:wrap}
+.milestones .m{display:flex; align-items:center; gap:8px; font-size:13px; color:var(--ink-soft)}
+.milestones .m .d{width:12px; height:12px; border-radius:50%; background:var(--gold)}
+.milestones .arrow{color:var(--line)}
+
+/* ---------- Profile ---------- */
+.prof-role{display:flex; align-items:center; gap:16px; margin:8px 0 22px; flex-wrap:wrap}
+.prof-role .pos{font-family:"Noto Serif JP",serif; font-size:clamp(20px,3vw,26px); color:var(--navy); font-weight:700}
+.prof-role .chip{font-size:13px; color:var(--gold); border:1px solid var(--gold-soft); border-radius:999px; padding:5px 14px; font-weight:700; letter-spacing:.05em}
+.prof-intro{max-width:48em; color:var(--ink); line-height:1.95}
+.prof-stats{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin:44px 0}
+@media(max-width:760px){ .prof-stats{grid-template-columns:1fr 1fr} }
+.prof-stat{background:var(--bg-soft); border:1px solid var(--line); border-radius:14px; padding:26px 22px; text-align:center}
+.prof-stat b{display:block; font-family:"Noto Serif JP",serif; font-size:clamp(26px,4vw,34px); color:var(--navy); font-weight:700; line-height:1.1}
+.prof-stat span{display:block; font-size:14px; color:var(--ink-soft); margin-top:8px}
+.prof-sub{font-family:"Noto Serif JP",serif; font-size:20px; color:var(--navy); font-weight:600; margin:40px 0 20px;
+  padding-bottom:12px; border-bottom:1px solid var(--line)}
+.timeline{border-left:2px solid var(--line); padding-left:28px; margin-top:8px}
+.timeline .tl{position:relative; padding:11px 0; display:flex; gap:18px; flex-wrap:wrap; align-items:baseline}
+.timeline .tl::before{content:""; position:absolute; left:-35px; top:18px; width:10px; height:10px; border-radius:50%;
+  background:var(--gold); box-shadow:0 0 0 4px #fff}
+.timeline .yr{font-family:"Noto Serif JP",serif; color:var(--gold); font-weight:700; font-size:15px; min-width:70px}
+.timeline .ev{color:var(--ink); font-size:16px}
+.achv{background:#fff; border:1px solid var(--line); border-radius:16px; padding:clamp(26px,3.5vw,36px); margin-bottom:22px;
+  border-top:3px solid var(--gold)}
+.achv h4{font-family:"Noto Serif JP",serif; font-size:clamp(18px,2.6vw,22px); color:var(--navy); font-weight:700; margin-bottom:14px; line-height:1.5}
+.achv p{color:var(--ink-soft); font-size:16px; line-height:1.9; margin-bottom:16px}
+.achv .result{display:flex; gap:14px; align-items:flex-start; background:var(--bg-soft); border-radius:10px; padding:16px 18px; font-size:15px}
+.achv .result b{color:var(--gold); font-family:"Noto Serif JP",serif; white-space:nowrap}
+.achv .result span{color:var(--ink)}
+.creds{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:8px}
+@media(max-width:700px){ .creds{grid-template-columns:1fr} }
+.cred-box{background:#fff; border:1px solid var(--line); border-radius:14px; padding:28px 26px}
+.cred-box h5{font-size:14px; letter-spacing:.08em; color:var(--gold); font-weight:700; margin-bottom:16px}
+.cred-box ul{list-style:none}
+.cred-box li{padding:9px 0; border-bottom:1px dashed var(--line); font-size:16px; color:var(--ink); display:flex; gap:10px}
+.cred-box li:last-child{border-bottom:none}
+.cred-box li::before{content:"✓"; color:var(--gold); font-weight:700}
+.prof-note{font-size:14px; color:var(--ink-soft); margin-top:26px; padding:16px 20px; background:var(--bg-soft); border-radius:10px; border-left:3px solid var(--gold-soft)}
+
+/* ---------- FAQ ---------- */
+.faq-list{margin-top:40px; border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%; text-align:left; background:none; border:none; cursor:pointer;
+  display:flex; align-items:flex-start; gap:18px; padding:26px 4px; font-family:"Noto Serif JP",serif;
+  font-size:clamp(17px,2.2vw,20px); font-weight:600; color:var(--navy); line-height:1.6}
+.faq-q .qmark{color:var(--gold); font-size:22px; flex-shrink:0}
+.faq-q .plus{margin-left:auto; flex-shrink:0; width:22px; height:22px; position:relative; transition:transform .3s}
+.faq-q .plus::before,.faq-q .plus::after{content:""; position:absolute; background:var(--gold); border-radius:2px}
+.faq-q .plus::before{top:10px; left:0; width:22px; height:2px}
+.faq-q .plus::after{top:0; left:10px; width:2px; height:22px; transition:opacity .3s}
+.faq-item.open .plus{transform:rotate(180deg)}
+.faq-item.open .plus::after{opacity:0}
+.faq-a{max-height:0; overflow:hidden; transition:max-height .4s ease}
+.faq-a p{padding:0 4px 28px 40px; color:var(--ink-soft); font-size:16px; line-height:1.9}
+
+/* ---------- Contact form ---------- */
+.contact-grid{display:grid; grid-template-columns:1fr 1.1fr; gap:clamp(30px,5vw,60px); align-items:start}
+@media(max-width:820px){ .contact-grid{grid-template-columns:1fr} }
+.contact-info h2{font-size:clamp(26px,4vw,38px); margin-bottom:18px}
+.contact-info .lead{margin-bottom:30px}
+.info-row{display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--line); font-size:16px}
+.info-row .label{color:var(--gold); font-weight:700; min-width:90px; font-size:14px; letter-spacing:.06em; padding-top:2px}
+.info-row .val{color:var(--ink)}
+.info-row .val a{color:var(--navy); text-decoration:underline; text-underline-offset:3px}
+.form-card{background:#fff; border:1px solid var(--line); border-radius:18px; padding:clamp(28px,4vw,44px);
+  box-shadow:0 18px 50px rgba(26,28,35,.06)}
+.field{margin-bottom:22px}
+.field label{display:block; font-size:14px; font-weight:700; color:var(--navy); margin-bottom:8px; letter-spacing:.03em}
+.field label .req{color:var(--gold); margin-left:4px}
+.field input,.field select,.field textarea{width:100%; font-family:"Noto Sans JP",sans-serif; font-size:16px;
+  color:var(--ink); background:var(--bg-soft); border:1.5px solid var(--line); border-radius:10px;
+  padding:14px 16px; transition:border-color .2s, background .2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none; border-color:var(--navy); background:#fff}
+.field textarea{resize:vertical; min-height:130px}
+.form-submit{width:100%; padding:17px; background:var(--navy); color:#fff; border:none; border-radius:12px;
+  font-family:"Noto Sans JP",sans-serif; font-weight:700; font-size:17px; cursor:pointer;
+  box-shadow:0 10px 30px rgba(31,42,84,.18); transition:transform .15s, background .2s}
+.form-submit:hover{transform:translateY(-2px); background:var(--navy-2)}
+.form-hint{font-size:13px; color:var(--ink-soft); margin-top:14px; line-height:1.7; text-align:center}
+.form-note{display:flex; gap:22px; flex-wrap:wrap; margin-top:24px; font-size:14px; color:var(--ink-soft)}
+.form-note span{display:inline-flex; align-items:center; gap:7px}
+.form-note span::before{content:"✓"; color:var(--gold)}
+
+/* ---------- Contact / CTA ---------- */
+.cta{background:var(--navy); color:#fff; border-radius:20px; padding:clamp(44px,7vw,80px);
+  text-align:center; position:relative; overflow:hidden}
+.cta::after{content:""; position:absolute; left:-100px; bottom:-140px; width:420px; height:420px;
+  background:radial-gradient(circle,rgba(169,133,63,.28),transparent 70%); border-radius:50%}
+.cta h2{color:#fff; font-size:clamp(26px,4vw,40px); margin-bottom:18px; position:relative}
+.cta p{color:rgba(255,255,255,.82); max-width:38em; margin:0 auto 34px; position:relative}
+.cta .btn-primary{background:#fff; color:var(--navy); position:relative}
+.cta .btn-primary:hover{background:var(--bg-soft)}
+.cta-notes{position:relative; margin-top:34px; display:flex; gap:26px; flex-wrap:wrap; justify-content:center;
+  font-size:14px; color:rgba(255,255,255,.72)}
+.cta-notes span{display:inline-flex; align-items:center; gap:8px}
+.cta-notes span::before{content:"✓"; color:var(--gold-soft)}
+
+/* ---------- Footer ---------- */
+footer{padding:56px 0 40px; border-top:1px solid var(--line); color:var(--ink-soft); font-size:15px}
+.foot-top{display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap; margin-bottom:30px}
+.foot-brand{font-family:"Noto Serif JP",serif; font-size:20px; color:var(--navy); font-weight:700}
+.foot-brand span{color:var(--gold)}
+.foot-links{display:flex; gap:24px; flex-wrap:wrap}
+.foot-links a{color:var(--ink-soft)} .foot-links a:hover{color:var(--navy)}
+.copy{font-size:13px; color:var(--ink-soft); opacity:.8}
+.placeholder{color:var(--gold); font-weight:500}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<!-- ============ Header ============ -->
+<header>
+  <div class="wrap nav">
+    <div class="brand">東京<span>響働</span>ビジネスサポート <em style="font-style:normal;font-size:13px;font-family:'Noto Sans JP';color:var(--ink-soft);font-weight:400;">合同会社</em></div>
+    <nav class="nav-links">
+      <a href="#merit">選ばれる理由</a>
+      <a href="#services">サービス</a>
+      <a href="#profile">代表者</a>
+      <a href="#pricing">料金</a>
+      <a href="#faq">Q&amp;A</a>
+      <a href="#contact" class="nav-cta">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ 最上部バンド（実写×生成レイヤーの融合） ============ -->
+<div class="hero-band">
+  <img src="images/hd/band-hero.jpg" alt="国境を越えて交わされる握手" width="2400" height="1000" loading="eager" fetchpriority="high">
+  <div class="sheen"></div>
+</div>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <canvas id="net"></canvas>
+  <div class="blob b1"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow reveal">Global Legal &amp; Business Outsourcing</div>
+        <h1 class="reveal">海外ビジネスは、<br><span style="white-space:nowrap"><span class="accent">経験のある伴走者</span>と。</span></h1>
+        <p class="lead reveal">海外進出・M&amp;A・現地法人設立等のご支援から、英文書作成・英語交渉・海外ビジネス研修まで。企業法務<b>20年</b>・海外事業<b>11年</b>の実務家が、貴社のグローバル業務を業務委託でまるごと支援します。</p>
+        <p class="sub reveal">プロレベルの成果物を、最速スケジュールで、新人社員水準の報酬で。賞与・社会保険・交通費は不要、雇用リスクは皆無です。</p>
+        <div class="hero-cta reveal">
+          <a href="#contact" class="btn btn-primary">無料でご相談する →</a>
+          <a href="#profile" class="btn btn-ghost">代表者の実績を見る</a>
+        </div>
+        <div class="hero-badges reveal">
+          <div><b class="countup" data-to="20" data-suffix="年">0年</b>法務・コンプライアンス</div>
+          <div><b class="countup" data-to="11" data-suffix="年">0年</b>海外事業・現地法人経営</div>
+          <div><b class="countup" data-to="8" data-suffix="ヶ月">0ヶ月</b>で海外事業立上げ</div>
+        </div>
+      </div>
+
+      <div class="hero-art reveal">
+        <div class="photo hero-photo kenburns">
+          <img class="ph" alt="英文契約書に署名する場面" data-label="調印の瞬間" data-file="images/hd/hero-4x5.jpg" src="images/hd/hero-4x5.jpg" width="1200" height="1500" loading="eager">
+          <div class="cap">グローバルな信頼を、実務で支える<small>国際会議・契約交渉の現場に精通</small></div>
+        </div>
+        <div class="float-chip c1"><i></i>海外M&amp;A・現地法人設立等の支援</div>
+        <div class="float-chip c2"><i></i>英語交渉・英文書作成</div>
+        <div class="float-chip c4"><i></i>海外法務研修</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- keyword marquee -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>海外進出支援</span><span>クロスボーダーM&amp;A</span><span>英文書作成支援</span><span>英語での交渉・会議</span><span>海外法務研修</span><span>現地法人マネジメント</span><span>市場調査</span><span>コンプライアンス教育</span>
+    <span>海外進出支援</span><span>クロスボーダーM&amp;A</span><span>英文書作成支援</span><span>英語での交渉・会議</span><span>海外法務研修</span><span>現地法人マネジメント</span><span>市場調査</span><span>コンプライアンス教育</span>
+  </div>
+</div>
+
+<!-- ============ Merit ============ -->
+<section class="sec" id="merit">
+  <div class="wrap">
+    <div class="eyebrow reveal">Why us</div>
+    <h2 class="sec-title reveal">雇用より、業務委託。<br>6つのメリット。</h2>
+    <p class="lead reveal">必要なときに、必要な業務だけ。無駄のない、しなやかな外部戦力です。</p>
+    <div class="grid grid-3" style="margin-top:44px">
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7l8-4 8 4-8 4-8-4zM4 7v10l8 4 8-4V7"/></svg></div>
+        <h3>必要な業務だけ切り出し</h3>
+        <p>お困りの業務のみを外部化。抱え込まず、コア業務にリソースを集中できます。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 7v5l3 2M12 21a9 9 0 100-18 9 9 0 000 18z"/></svg></div>
+        <h3>最速スケジュール・納期厳守</h3>
+        <p>スピードは価値。少なくとも納期は必ずお守りし、最速での対応を追求します。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 5 5.6.8-4 4 1 5.6L12 20l-5 2.4 1-5.6-4-4 5.6-.8z"/></svg></div>
+        <h3>プロレベルの高品質</h3>
+        <p>プロフェッショナルの回答・成果物を。実務水準の品質でお返しします。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l2 6 4-16 2 8h6"/></svg></div>
+        <h3>新人社員水準の報酬</h3>
+        <p>品質はプロ、コストは新人採用水準。費用対効果を最大化します。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></div>
+        <h3>雇用リスクは、皆無</h3>
+        <p>解雇・労務トラブル等の雇用リスクが発生しません。安心してご依頼いただけます。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h16M8 15V9m4 6V6m4 9v-4"/></svg></div>
+        <h3>付随費用は一切不要</h3>
+        <p>賞与・社会保険・交通費等の費用は一切発生しません。委託料のみの明朗会計です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Process (海外進出サポート) ============ -->
+<section class="sec bg-soft" id="process">
+  <div class="wrap">
+    <div class="eyebrow reveal">Global Expansion Support</div>
+    <h2 class="sec-title reveal">海外進出を、<br>ゼロから成功まで一気通貫で。</h2>
+    <p class="lead reveal">「情報が全くない」状態からのタイ進出を、実際に8ヶ月で成功させた経験があります。市場調査から現地運営・人材確保まで、各フェーズを実務家が伴走します。</p>
+    <div class="process">
+      <div class="pstep reveal">
+        <div class="pnum">1</div>
+        <div class="picon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16 16l5 5"/></svg></div>
+        <h4>市場調査</h4>
+        <p>現地ネットワークで競合・法規制・市場性をゼロから解明。</p>
+      </div>
+      <div class="pstep reveal">
+        <div class="pnum">2</div>
+        <div class="picon"><svg viewBox="0 0 24 24"><path d="M4 20V8l8-4 8 4v12M4 20h16M9 20v-6h6v6"/></svg></div>
+        <h4>スキーム構築</h4>
+        <p>外資規制をクリアし、適法に経営権を確保する資本設計。</p>
+      </div>
+      <div class="pstep reveal">
+        <div class="pnum">3</div>
+        <div class="picon"><svg viewBox="0 0 24 24"><path d="M8 7h8M8 12h8M8 17h5M6 3h9l3 3v15H6z"/></svg></div>
+        <h4>交渉・各種手続</h4>
+        <p>英文書の作成サポート・翻訳、英語での交渉・会議に同席対応。</p>
+      </div>
+      <div class="pstep reveal">
+        <div class="pnum">4</div>
+        <div class="picon"><svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12M9 21v-6h6v6"/></svg></div>
+        <h4>現地法人設立</h4>
+        <p>M&amp;A・合弁を活用した子会社・孫会社の立ち上げを主導。</p>
+      </div>
+      <div class="pstep reveal">
+        <div class="pnum">5</div>
+        <div class="picon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M17 11l2 2 4-4"/></svg></div>
+        <h4>運営・人材</h4>
+        <p>現地マネジメント、コンプライアンス教育、独自ネットワークを活かした現地採用のご支援。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Gallery ============ -->
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="eyebrow reveal">The Field</div>
+    <h2 class="sec-title reveal">交渉のテーブルから、事業の安定運営まで。</h2>
+    <p class="lead reveal">契約交渉、国際会議、調印式、金融機関・専門家との協議——。海外ビジネスの重要な局面に、実務家として数多く立ち会ってまいりました。</p>
+    <div class="gallery">
+      <!-- 大タイル: オリジナル生成ビジュアル（英文契約） -->
+      <div class="photo g-wide g-tall art reveal"><img class="ph" alt="英文契約書のドラフティングとレビューを表すオリジナルビジュアル" data-label="英文契約" data-file="images/hd/g-contract.svg" src="images/hd/g-contract.svg" width="900" height="562" loading="lazy"><div class="cap">条項の一行が、事業の明暗を分ける<small>英文契約のドラフティングとリスク検討</small></div></div>
+      <!-- オリジナル生成ビジュアル（アジアの夕景） -->
+      <div class="photo art reveal"><img class="ph" alt="昼の光あふれるアジア都市スカイライン（オリジナルビジュアル）" data-label="アジアの成長市場" data-file="images/hd/g-skyline.svg" src="images/hd/g-skyline.svg" width="900" height="562" loading="lazy"><div class="cap">アジアの成長市場</div></div>
+      <!-- オリジナル生成ビジュアル（多国間ネットワーク） -->
+      <div class="photo art reveal"><img class="ph" alt="各国拠点を結ぶ国際ネットワークのオリジナルビジュアル" data-label="多国間の協議" data-file="images/hd/g-network.svg" src="images/hd/g-network.svg" width="900" height="562" loading="lazy"><div class="cap">多国間の交渉・協議</div></div>
+      <div class="photo g-tall reveal"><img class="ph" alt="契約書への署名・調印式" data-label="調印式" data-file="images/hd/g-signing.jpg" src="images/hd/g-signing.jpg" width="720" height="944" loading="lazy"><div class="cap">調印の瞬間<small>M&amp;A・合弁契約の締結</small></div></div>
+      <div class="photo reveal"><img class="ph" alt="各国のビジネスパーソンによる握手" data-label="国境を越えた合意" data-file="images/hd/g-lead.jpg" src="images/hd/g-lead.jpg" width="900" height="562" loading="lazy"><div class="cap">国境を越えた合意形成</div></div>
+      <div class="photo g-wide art reveal"><img class="ph" alt="日本本社から現地法人・合弁会社へ至る資本スキームの構成図（オリジナルビジュアル）" data-label="資本スキーム" data-file="images/hd/g-scheme.svg" src="images/hd/g-scheme.svg" width="1480" height="450" loading="lazy"><div class="cap">金融機関・専門家と組み立てる資本スキーム<small>外資規制をクリアし、少数株主でも経営権を確保する</small></div></div>
+      <div class="photo reveal"><img class="ph" alt="英語での交渉・会議" data-label="英語での交渉" data-file="images/hd/g-meeting.jpg" src="images/hd/g-meeting.jpg" width="900" height="562" loading="lazy"><div class="cap">英語での交渉・同席</div></div>
+      <div class="photo g-full reveal"><img class="ph" alt="法務研修の様子" data-label="海外法務研修" data-file="images/hd/g-training.jpg" src="images/hd/g-training.jpg" width="1600" height="240" loading="lazy"><div class="cap">海外法務研修・教育</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Services ============ -->
+<section class="sec bg-soft" id="services">
+  <div class="wrap">
+    <div class="eyebrow reveal">Services</div>
+    <h2 class="sec-title reveal">業務委託形式で<br>ご提供するサービス</h2>
+    <p class="lead reveal">海外進出・研修・翻訳から独自ネットワークを活かした現地採用のご支援まで。国際ビジネスの実務を幅広く支援します。</p>
+    <ul class="svc-list">
+      <li class="reveal"><span class="svc-num">01</span><span class="svc-txt"><b>海外法令・外資規制のリサーチ／市場調査報告書</b>の作成等</span></li>
+      <li class="reveal"><span class="svc-num">02</span><span class="svc-txt"><b>各種英文書</b>等の作成サポート及びビジネス上の観点からの事業リスクの検討</span></li>
+      <li class="reveal"><span class="svc-num">03</span><span class="svc-txt"><b>法務部員等に対する各種研修</b>（ビジネス英語、新人研修 等）</span></li>
+      <li class="reveal"><span class="svc-num">04</span><span class="svc-txt"><b>現地法人スタッフ等への本社方針説明・教育</b>等</span></li>
+      <li class="reveal"><span class="svc-num">05</span><span class="svc-txt"><b>各種英文ドキュメント</b>の翻訳及び内容のご説明</span></li>
+      <li class="reveal"><span class="svc-num">06</span><span class="svc-txt"><b>英語での交渉・会議への同席対応</b></span></li>
+      <li class="reveal"><span class="svc-num">07</span><span class="svc-txt"><b>ASEAN（殊にタイ）における独自ネットワークを活かした現地採用等</b>のご支援</span></li>
+    </ul>
+    <p class="lead reveal" style="margin-top:26px;font-size:15px;">
+      ※ 人材紹介は、独自ネットワークを活かした<b style="color:var(--navy)">ASEAN地域（殊にタイ）の現地採用</b>に特化して<span style="white-space:nowrap">おります</span>（日本国内の職業紹介は対象外です）。
+    </p>
+    <div class="reveal" style="margin-top:18px;padding:18px 22px;background:var(--bg-soft);border-radius:12px;border-left:3px solid var(--gold-soft);font-size:14px;color:var(--ink-soft);line-height:1.85;">
+      ※ 当社は法律事務所ではありません。契約書に関するご支援は、<b style="color:var(--navy)">作成サポート・翻訳、およびビジネス上の観点からの事業リスクの検討</b>を中心とし、法的な判断・鑑定を要する場合は、弁護士等の有資格者と連携のうえ対応いたします。
+    </div>
+  </div>
+</section>
+
+<!-- ============ Scope ============ -->
+<section class="sec" id="scope">
+  <div class="wrap">
+    <div class="eyebrow reveal">Scope</div>
+    <h2 class="sec-title reveal">「月32・64・96時間」で<br>完結し得る業務を想定</h2>
+    <div class="scope-box reveal">
+      <p>各種英文書等の作成サポート及びビジネス上の観点からの事業リスクの検討、英語での交渉・会議、法務部員等に対する海外ビジネス研修（ビジネス英語、海外リサーチ情報等を含む）、現地法人スタッフに対するコンプライアンス教育研修、各種英文ドキュメントの翻訳及び内容のご説明、ASEAN（殊にタイ）の市場調査や、独自ネットワークを活かした現地採用等のご支援につき、業務委託形式でのご支援を想定しております。</p>
+      <div class="scope-tags">
+        <span class="tag">各種英文書等の作成サポート</span>
+        <span class="tag">英語 交渉・会議</span>
+        <span class="tag">海外法務研修</span>
+        <span class="tag">コンプライアンス教育</span>
+        <span class="tag">法律文書等の翻訳</span>
+        <span class="tag">ASEAN（タイ）市場調査</span>
+        <span class="tag">独自ネットワークを活かした現地採用等のご支援</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Profile ============ -->
+<section class="sec" id="profile">
+  <div class="wrap">
+    <div class="eyebrow reveal">Profile</div>
+    <h2 class="sec-title reveal">代表者プロフィール</h2>
+    <div class="prof-role reveal">
+      <span class="pos">代表社員</span>
+      <span class="chip">法務 × 英語 × 海外事業</span>
+    </div>
+    <p class="prof-intro reveal">
+      法律・英語・M&amp;A・海外駐在という交差点領域で、2021年より会社に依存しない新しい働き方を実践しています。
+      総合人材サービス・小売・飲食の各業界で、法務・コンプライアンス分野に<b>通算20年</b>。
+      うち海外拠点の立ち上げから現地法人のマネジメント（海外子会社では取締役）まで、<b>海外事業に11年</b>従事してまいりました。
+      英語のみでのM&amp;A交渉、英文契約書・各種書面の精査・作成など、海外進出と関連会社管理に必要な知識・経験を蓄積（PMIを含む）。
+      殊にタイでは、ビジネスを成功に導くための有益な人脈を築いております。
+    </p>
+
+    <div class="prof-stats reveal">
+      <div class="prof-stat"><b>20年</b><span>法務・コンプライアンス実務</span></div>
+      <div class="prof-stat"><b>11年</b><span>海外事業・現地法人経営</span></div>
+      <div class="prof-stat"><b>法務博士</b><span>法科大学院修了</span></div>
+      <div class="prof-stat"><b style="font-size:clamp(15px,2.1vw,19px);line-height:1.4;white-space:nowrap">ビジネス英語の<br>プロフェッショナル</b></div>
+    </div>
+
+    <div class="prof-sub reveal">経歴（要約）</div>
+    <div class="timeline reveal">
+      <div class="tl"><span class="yr">2006</span><span class="ev">大手総合人材サービス企業に入社（法務部門）</span></div>
+      <div class="tl"><span class="yr">2014</span><span class="ev">在タイ合弁子会社へ ジェネラルマネージャー として出向</span></div>
+      <div class="tl"><span class="yr">2019</span><span class="ev">法務戦略本部（新設）の部門長として帰任</span></div>
+      <div class="tl"><span class="yr">2020</span><span class="ev">外資系大手人材サービス企業 法務コンプライアンス部長に就任</span></div>
+      <div class="tl"><span class="yr">2021</span><span class="ev">大手百貨店グループと業務委託契約（法務アドバイザー）― 独立</span></div>
+      <div class="tl"><span class="yr">2025</span><span class="ev">飲食系ベンチャー企業 法務総務部 部長を経験</span></div>
+      <div class="tl"><span class="yr">現在</span><span class="ev">東京響働ビジネスサポート合同会社 代表社員</span></div>
+    </div>
+
+    <div class="prof-sub reveal">主な実績</div>
+
+    <div class="achv reveal">
+      <div class="photo achv-banner"><img class="ph" alt="M&amp;A調印式" data-label="調印式・M&amp;A完了" data-file="images/hd/b-signing.jpg" src="images/hd/b-signing.jpg" width="1600" height="305" loading="lazy"><div class="cap">海外合弁会社の設立・M&amp;A調印</div></div>
+      <h4>Ⅰ. 海外におけるM&amp;Aを活用した海外子会社・孫会社の設立</h4>
+      <p>初の海外進出先タイ・バンコクにて、M&amp;A手法を用いた現地法人の立ち上げを主導。市場データが皆無のゼロベースから、邦銀・現地商工会議所・市場調査会社等への独自リサーチで競合上位100社を把握。外資規制をクリアしつつ、種類株式を活用し少数株主でありながら適法に経営権を確保するスキームを構築しました。</p>
+      <div class="gauge">
+        <div class="big">8<small>ヶ月で完了</small></div>
+        <div class="milestones">
+          <span class="m"><span class="d"></span>市場調査</span><span class="arrow">→</span>
+          <span class="m"><span class="d"></span>スキーム構築</span><span class="arrow">→</span>
+          <span class="m"><span class="d"></span>合弁設立</span><span class="arrow">→</span>
+          <span class="m"><span class="d"></span>M&amp;A完了</span>
+        </div>
+      </div>
+      <div class="result"><b>成果</b><span>本格始動からわずか8ヶ月で、初の海外合弁会社の設立およびM&amp;Aを成功裏に完了。</span></div>
+    </div>
+
+    <div class="achv reveal">
+      <div class="photo achv-banner"><img class="ph" alt="現地での交渉・会議" data-label="現地での営業・交渉" data-file="images/hd/b-negotiation.jpg" src="images/hd/b-negotiation.jpg" width="1600" height="305" loading="lazy"><div class="cap">現地法人マネジメント・営業戦略の推進</div></div>
+      <h4>Ⅱ. 海外現地法人GMとしての営業戦略推進と市場シェア拡大</h4>
+      <p>現地法人の日本人ジェネラルマネージャーとして、製造派遣事業の営業戦略を立案・執行。実質的な決裁権を握る「タイ人管理者」にターゲットを絞り、工業団地へ自ら足を運んで信頼関係を構築。管理者同士のコミュニティを主催し、口コミによる案件獲得を仕組み化しました。</p>
+      <div class="chart chart-bars reveal">
+        <div class="bar"><span class="bval">6,000</span><div class="bar-fill" style="--fill:71%"></div><span class="blabel">着任時</span></div>
+        <div class="bar"><span class="bval">8,000</span><div class="bar-fill" style="--fill:94%"></div><span class="blabel">駐在後</span></div>
+        <div class="bar"><span class="bval">8,500</span><div class="bar-fill" style="--fill:100%"></div><span class="blabel">ピーク時</span></div>
+      </div>
+      <div class="chart-legend">
+        <span><span class="dot" style="background:var(--navy)"></span>自社 派遣在籍数（名）</span>
+        <span>着任時から <b style="color:var(--navy)">+2,500名（約1.4倍）</b></span>
+        <span>年平均 <b style="color:var(--navy)">+6%</b> 成長（駐在5年間）</span>
+      </div>
+      <div class="result" style="margin-top:20px"><b>成果</b><span>駐在5年間で年平均6%成長を達成。派遣在籍数を6,000名から8,000名（瞬間8,500名）へ拡大し、業界最大手（約9,000名規模）に肉薄する2位争いへ押し上げ。</span></div>
+    </div>
+
+    <div class="achv reveal">
+      <div class="photo achv-banner"><img class="ph" alt="契約書レビュー・リーガルテック" data-label="契約レビュー・法務DX" data-file="images/hd/b-legaltech.jpg" src="images/hd/b-legaltech.jpg" width="1600" height="305" loading="lazy"><div class="cap">リーガルテック導入・契約レビュー体制の構築</div></div>
+      <h4>Ⅲ. リーガルテック導入による法務業務DXの推進</h4>
+      <p>リーガルテック未導入の環境で、AI契約レビュー（LegalOn）・電子署名（DocuSign）の導入と運用設計を単独で推進。無秩序だった相談窓口を専用共有アドレスへ一元化し、格納ルール・権限設定・自動返信・電子署名連携まで、実務の分岐点をすべて洗い出して整合的な業務フローを設計しました。</p>
+      <div class="chart chart-h reveal">
+        <div class="hbar"><span class="hlab">導入前</span><div class="track"><div class="hfill danger" style="--w:100%"></div></div><b>15営業日超</b></div>
+        <div class="hbar"><span class="hlab">新規案件</span><div class="track"><div class="hfill" style="--w:66%"></div></div><b>10営業日以内</b></div>
+        <div class="hbar"><span class="hlab">戻り案件</span><div class="track"><div class="hfill" style="--w:33%"></div></div><b>5営業日以内</b></div>
+        <div class="hbar"><span class="hlab">NDA</span><div class="track"><div class="hfill win" style="--w:8%"></div></div><b>原則 即日返却</b></div>
+      </div>
+      <div class="result" style="margin-top:20px"><b>成果</b><span>最長15営業日超の滞留を解消。「新規10営業日／戻り5営業日／NDA原則即日」の体制を確立し、レビュー品質の平準化とダブルチェック体制を実現。</span></div>
+    </div>
+
+    <p class="prof-note reveal">※ 氏名および在籍企業名等の詳細は、守秘の観点から公開を控えております。ご面談の際に個別でご案内いたします。</p>
+
+    <div class="prof-sub reveal">語学・保有資格</div>
+    <div class="creds">
+      <div class="cred-box reveal">
+        <h5>LANGUAGE ─ 英語資格</h5>
+        <ul>
+          <li>実用英語技能検定 1級</li>
+          <li>通訳案内士（通訳案内業免許）</li>
+          <li>TOEIC 895点</li>
+          <li>英語のみでのM&amp;A交渉・英文契約実務 多数</li>
+          <li>フランス語検定 3級</li>
+        </ul>
+      </div>
+      <div class="cred-box reveal">
+        <h5>QUALIFICATION ─ 保有資格</h5>
+        <ul>
+          <li>法務博士（法科大学院修了）</li>
+          <li>行政書士</li>
+          <li>宅地建物取引士</li>
+          <li>FP技能士 2級 / 日商簿記 3級</li>
+          <li>普通自動車第一種運転免許</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec bg-soft" id="faq">
+  <div class="wrap">
+    <div class="eyebrow reveal">Q&amp;A</div>
+    <h2 class="sec-title reveal">よくあるご質問</h2>
+    <p class="lead reveal">ご検討にあたり、よくいただくご質問をまとめました。その他はお気軽にお問い合わせください。</p>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q"><span class="qmark">Q</span>契約期間の縛りや、最低利用期間はありますか？<span class="plus"></span></button>
+        <div class="faq-a"><p>長期の拘束は前提としておりません。まずは1か月単位でのご依頼が可能で、業務内容やご状況に合わせて柔軟に設計いたします。委細はご面談にて調整させてください。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="qmark">Q</span>月の時間が足りない、または余った場合はどうなりますか？<span class="plus"></span></button>
+        <div class="faq-a"><p>翌月のプラン変更（32／64／96時間）で調整いただけます。恒常的に不足・超過が見込まれる場合は、最適なプランをご提案いたします。詳細はご相談ください。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="qmark">Q</span>委託時間には、どのような作業が含まれますか？<span class="plus"></span></button>
+        <div class="faq-a"><p>打合せ、資料等の確認、解決策等の検討、各種リサーチ、成果物の作成等に必要な時間が含まれます。実務に要する工数をトータルでご提供します。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="qmark">Q</span>秘密保持（NDA）には対応いただけますか？<span class="plus"></span></button>
+        <div class="faq-a"><p>はい。機密情報を扱う業務の性質上、秘密保持契約（NDA）の締結に対応いたします。御社の書式でのご締結も可能です。安心してご相談ください。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="qmark">Q</span>請求書（インボイス）は発行されますか？<span class="plus"></span></button>
+        <div class="faq-a"><p>適格請求書発行事業者として登録済みです。インボイス制度に対応した適格請求書を発行いたしますので、仕入税額控除にご利用いただけます。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="qmark">Q</span>対応エリアは？オンラインのみでも依頼できますか？<span class="plus"></span></button>
+        <div class="faq-a"><p>オンラインを中心に全国対応いたします。英語での会議・交渉の同席や、ASEAN（殊にタイ）の現地案件にも対応可能です。なお人材紹介は、独自ネットワークを活かしたASEAN地域（殊にタイ）の現地採用に特化しており、日本国内の職業紹介は対象外とさせていただいております。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="qmark">Q</span>依頼から成果物までの流れを教えてください。<span class="plus"></span></button>
+        <div class="faq-a"><p>①お問い合わせ → ②ご面談（課題・ご要望の確認）→ ③プラン・スケジュールのご提案 → ④ご契約 → ⑤業務着手・成果物のご納品、という流れです。まずはお気軽にご一報ください。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Pricing ============ -->
+<section class="sec bg-soft" id="pricing">
+  <div class="wrap">
+    <div class="eyebrow reveal">Pricing</div>
+    <h2 class="sec-title reveal">明朗な月額委託料</h2>
+    <p class="lead reveal">お打合せ・資料確認・解決策の検討・各種リサーチ・成果物作成に必要な時間を含みます。</p>
+    <div class="price-grid">
+      <div class="price reveal">
+        <div class="hours">32時間 / 月<small>スポットでのご依頼に</small></div>
+        <div class="amount"><span>¥</span>250,000<span>-</span></div>
+        <div class="tax">税別（税込 275,000円）</div>
+        <div class="per">1時間あたり 約7,800円</div>
+      </div>
+      <div class="price feature reveal">
+        <div class="hours">64時間 / 月<small>継続的なご支援に最適</small></div>
+        <div class="amount"><span>¥</span>450,000<span>-</span></div>
+        <div class="tax">税別（税込 495,000円）</div>
+        <div class="per">1時間あたり 約7,000円</div>
+      </div>
+      <div class="price reveal">
+        <div class="hours">96時間 / 月<small>本格的な外部戦力として</small></div>
+        <div class="amount"><span>¥</span>600,000<span>-</span></div>
+        <div class="tax">税別（税込 660,000円）</div>
+        <div class="per">1時間あたり 約6,250円</div>
+      </div>
+    </div>
+    <p class="price-note reveal">
+      ※ 上記時間には、打合せ、資料等の確認、解決策等の検討、各種リサーチ、成果物の作成等に必要な時間が含まれます。<br>
+      ※ 委細はご面談でお願いできますと誠に幸甚です。<br>
+      ※ 適格請求書発行事業者 登録済み。
+    </p>
+  </div>
+</section>
+
+<!-- ============ Contact form ============ -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="eyebrow">Contact</div>
+        <h2>まずは、お困りの業務を<br>お聞かせください。</h2>
+        <p class="lead">ご不明な点等ございましたら、お気軽にご一報ください。委細はご面談にて承ります。何卒よろしくお願いいたします。</p>
+        <div class="info-row"><span class="label">会社名</span><span class="val">東京響働ビジネスサポート合同会社</span></div>
+        <div class="info-row"><span class="label">所在地</span><span class="val">東京都大田区<br><span style="font-size:14px;color:var(--ink-soft);">（詳細はお問い合わせ時にご案内いたします）</span></span></div>
+        <div class="info-row"><span class="label">Email</span><span class="val"><a href="mailto:info@tokyokyodo.com">info@tokyokyodo.com</a></span></div>
+        <div class="info-row"><span class="label">受付</span><span class="val">お問い合わせフォーム／メール（24時間受付）</span></div>
+        <div class="form-note">
+          <span>適格請求書発行事業者 登録済み</span>
+          <span>雇用リスク ゼロ</span>
+          <span>NDA 対応可</span>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <form id="contactForm" action="https://formspree.io/f/xaqrkvzl" method="POST" novalidate>
+          <div class="field">
+            <label for="f-company">会社名 / 屋号 <span class="req">*</span></label>
+            <input type="text" id="f-company" name="company" placeholder="例）株式会社〇〇" required>
+          </div>
+          <div class="field">
+            <label for="f-name">ご担当者名 <span class="req">*</span></label>
+            <input type="text" id="f-name" name="name" placeholder="例）山田 太郎" required>
+          </div>
+          <div class="field">
+            <label for="f-email">メールアドレス <span class="req">*</span></label>
+            <input type="email" id="f-email" name="email" placeholder="例）taro@example.com" required>
+          </div>
+          <div class="field">
+            <label for="f-plan">ご興味のあるプラン</label>
+            <select id="f-plan" name="plan">
+              <option value="未定 / 相談したい">未定・まずは相談したい</option>
+              <option value="32時間/月（税別25万円）">32時間 / 月（税別25万円）</option>
+              <option value="64時間/月（税別45万円）">64時間 / 月（税別45万円）</option>
+              <option value="96時間/月（税別60万円）">96時間 / 月（税別60万円）</option>
+              <option value="スポット / 単発">スポット・単発での依頼</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg">ご相談内容 <span class="req">*</span></label>
+            <textarea id="f-msg" name="message" placeholder="お困りの業務、ご希望の納期、想定ボリューム等をご記入ください。" required></textarea>
+          </div>
+          <input type="hidden" name="_subject" value="【東京響働ビジネスサポート】Webサイトからお問い合わせ">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <button type="submit" class="form-submit">この内容で問い合わせる →</button>
+          <p class="form-hint" id="formHint">送信ボタンを押すと、フォームの内容がそのまま当社（info@tokyokyodo.com）に届きます。<br>ご入力いただいた個人情報は<a href="privacy.html" style="color:var(--navy);text-decoration:underline;">プライバシーポリシー</a>に基づき適切に取り扱います。</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Footer ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">東京<span>響働</span>ビジネスサポート合同会社</div>
+        <p style="margin-top:10px;max-width:28em;">海外進出・M&amp;A・現地法人設立等のご支援から、英文書作成・英語交渉・海外ビジネス研修まで。企業法務20年・海外事業11年の実務家が、貴社のグローバル業務を業務委託でまるごと支援します。</p>
+        <p style="margin-top:10px;max-width:30em;font-size:13px;color:var(--ink-soft);">当社は法律事務所ではありません。契約書に関するご支援は、作成サポート・翻訳、およびビジネス上の観点からの事業リスクの検討を中心とし、法的な判断・鑑定を要する場合は、弁護士等の有資格者と連携のうえ対応いたします。</p>
+        <p style="margin-top:12px;font-size:14px;">東京都大田区（詳細はお問い合わせ時にご案内）<br>
+        Email：<a href="mailto:info@tokyokyodo.com" style="color:var(--navy);text-decoration:underline;text-underline-offset:3px;">info@tokyokyodo.com</a></p>
+      </div>
+      <nav class="foot-links">
+        <a href="#merit">選ばれる理由</a>
+        <a href="#services">サービス</a>
+        <a href="#scope">想定業務</a>
+        <a href="#pricing">料金</a>
+        <a href="#faq">Q&amp;A</a>
+        <a href="#contact">お問い合わせ</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+      </nav>
+    </div>
+    <p class="copy">
+      適格請求書発行事業者 登録済み<br>
+      © <span id="year"></span> 東京響働ビジネスサポート合同会社　All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<script>
+// 控えめなスクロールフェードイン（Observer非対応・非発火でも必ず表示されるようフォールバック）
+document.getElementById('year').textContent = new Date().getFullYear();
+const reveals = document.querySelectorAll('.reveal');
+function showAll(){ reveals.forEach(el=>el.classList.add('in')); }
+if('IntersectionObserver' in window){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.08, rootMargin:'0px 0px -5% 0px'});
+  reveals.forEach((el,i)=>{ el.style.transitionDelay=(i%3*0.08)+'s'; io.observe(el); });
+  // 保険：読み込み直後に画面内の要素を即表示＋2秒後に全解除
+  requestAnimationFrame(()=>reveals.forEach(el=>{
+    if(el.getBoundingClientRect().top < innerHeight) el.classList.add('in');
+  }));
+  setTimeout(showAll, 2000);
+} else { showAll(); }
+
+// 画像プレースホルダ（画像ファイル未配置時に上品な代替を表示）
+function svgPlaceholder(label){
+  const svg="<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'>"
+    +"<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#eef0f7'/><stop offset='1' stop-color='#e0e4f0'/></linearGradient></defs>"
+    +"<rect width='400' height='300' fill='url(#g)'/>"
+    +"<g fill='none' stroke='#98a1c2' stroke-width='2.4' stroke-linejoin='round' stroke-linecap='round'>"
+    +"<rect x='150' y='104' width='100' height='74' rx='9'/><circle cx='183' cy='132' r='11'/>"
+    +"<path d='M158 174 l26 -28 16 15 22 -26 20 34'/></g>"
+    +"<text x='200' y='210' font-family='sans-serif' font-size='16' fill='#4a5478' text-anchor='middle' font-weight='700'>"+label+"</text>"
+    +"<text x='200' y='232' font-family='sans-serif' font-size='11' fill='#8890ab' text-anchor='middle'>写真をここに配置</text></svg>";
+  return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);
+}
+// 既定はプレースホルダを表示 → 実ファイルが存在すれば自動で差し替え（404のちらつき無し）
+document.querySelectorAll('img.ph').forEach(img=>{
+  const file=img.dataset.file, label=img.dataset.label||'PHOTO';
+  img.src=svgPlaceholder(label);
+  if(file){ const probe=new Image(); probe.onload=()=>{ if(probe.naturalWidth>1) img.src=file; }; probe.src=file; }
+});
+
+// スクロール進捗バー
+const prog=document.getElementById('progress');
+addEventListener('scroll',()=>{ const d=document.documentElement; const sc=d.scrollTop/((d.scrollHeight-d.clientHeight)||1); prog.style.width=(sc*100)+'%'; },{passive:true});
+
+// 数値カウントアップ
+function countup(el){ const to=+el.dataset.to, suf=el.dataset.suffix||'', dur=1300, t0=performance.now();
+  (function step(t){ const p=Math.min((t-t0)/dur,1); el.textContent=Math.round(to*(1-Math.pow(1-p,3)))+suf; if(p<1)requestAnimationFrame(step); })(performance.now());
+}
+const cups=document.querySelectorAll('.countup');
+if('IntersectionObserver' in window){
+  const uio=new IntersectionObserver((es)=>{es.forEach(e=>{ if(e.isIntersecting){ countup(e.target); uio.unobserve(e.target);} });},{threshold:.6});
+  cups.forEach(c=>uio.observe(c));
+} else { cups.forEach(countup); }
+// 保険：万一アニメが進まない環境でも最終値を必ず表示
+setTimeout(()=>cups.forEach(el=>{ const to=+el.dataset.to, suf=el.dataset.suffix||'';
+  if(el.textContent==='0'+suf || el.textContent==='0') el.textContent=to+suf; }), 2600);
+
+// ヒーロー：ネットワーク・パーティクル（グローバルな連携を表現／ニュートラル）
+(function(){
+  const cv=document.getElementById('net'); if(!cv) return; const ctx=cv.getContext('2d');
+  const host=cv.parentElement; let w=0,h=0,pts=[],raf;
+  const N=()=>Math.min(72, Math.floor((w*h)/14000));
+  function resize(){ const r=host.getBoundingClientRect(); w=cv.width=r.width; h=cv.height=r.height;
+    pts=Array.from({length:N()},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35})); }
+  function frame(){ ctx.clearRect(0,0,w,h);
+    for(const p of pts){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>w)p.vx*=-1; if(p.y<0||p.y>h)p.vy*=-1; }
+    for(let i=0;i<pts.length;i++){ for(let j=i+1;j<pts.length;j++){ const a=pts[i],b=pts[j];
+      const dx=a.x-b.x,dy=a.y-b.y,d2=dx*dx+dy*dy; if(d2<15000){ const al=(1-d2/15000)*.5;
+        ctx.strokeStyle='rgba(31,42,84,'+al+')'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); } } }
+    for(const p of pts){ ctx.fillStyle='rgba(169,133,63,.55)'; ctx.beginPath(); ctx.arc(p.x,p.y,2,0,7); ctx.fill(); }
+    raf=requestAnimationFrame(frame);
+  }
+  const ro=new ResizeObserver(resize); ro.observe(host); resize(); frame();
+})();
+
+// チャートのアニメーション（表示時に実サイズをJSで設定＝環境依存を排除）
+function fillChart(chart){
+  chart.querySelectorAll('.bar-fill').forEach(el=>{ const v=el.style.getPropertyValue('--fill'); if(v) el.style.height=v.trim(); });
+  chart.querySelectorAll('.hfill').forEach(el=>{ const v=el.style.getPropertyValue('--w'); if(v) el.style.width=v.trim(); });
+}
+const charts=document.querySelectorAll('.chart');
+if('IntersectionObserver' in window){
+  const cio=new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ fillChart(e.target); cio.unobserve(e.target); } }); },{threshold:0.3});
+  charts.forEach(c=>cio.observe(c));
+  setTimeout(()=>charts.forEach(fillChart), 2200);
+} else { charts.forEach(fillChart); }
+
+// FAQ アコーディオン
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item = btn.parentElement;
+    const ans = item.querySelector('.faq-a');
+    const open = item.classList.toggle('open');
+    ans.style.maxHeight = open ? ans.scrollHeight + 'px' : null;
+  });
+});
+
+// お問い合わせフォーム → Formspree経由でメール送信
+const form = document.getElementById('contactForm');
+if(form){
+  form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    const v = id => (document.getElementById(id).value || '').trim();
+    const company=v('f-company'), name=v('f-name'), email=v('f-email'), msg=v('f-msg');
+    if(!company||!name||!email||!msg){ alert('会社名・ご担当者名・メールアドレス・ご相談内容は必須です。'); return; }
+
+    const submitBtn = form.querySelector('.form-submit');
+    const hint = document.getElementById('formHint');
+    submitBtn.disabled = true;
+    submitBtn.textContent = '送信中…';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(res => {
+      if(res.ok){
+        form.reset();
+        form.style.display = 'none';
+        hint.textContent = 'お問い合わせいただきありがとうございます。内容を送信しました。担当者より折り返しご連絡いたします。';
+        hint.style.fontWeight = '700';
+      } else {
+        throw new Error('submit failed');
+      }
+    }).catch(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'この内容で問い合わせる →';
+      alert('送信に失敗しました。お手数ですが、info@tokyokyodo.com まで直接メールにてご連絡ください。');
+    });
+  });
+}
+</script>
+</body>
+</html>

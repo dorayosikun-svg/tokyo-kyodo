@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 450" width="1480" height="450" role="img" aria-label="日本本社から現地法人・合弁会社へ至る資本スキームの構成図（オリジナル生成ビジュアル）">
+  <defs>
+    <linearGradient id="sbg" x1="0" y1="0" x2=".7" y2="1">
+      <stop offset="0" stop-color="#fdfefe"/><stop offset=".55" stop-color="#f2f6fb"/><stop offset="1" stop-color="#e8f0f8"/>
+    </linearGradient>
+    <radialGradient id="sglow" cx=".78" cy=".18" r=".7">
+      <stop offset="0" stop-color="#fff6dd" stop-opacity=".95"/><stop offset="1" stop-color="#fff6dd" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="card" x1="0" y1="0" x2=".3" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f6f8fc"/>
+    </linearGradient>
+    <linearGradient id="sgold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c9a35f"/><stop offset="1" stop-color="#a9853f"/>
+    </linearGradient>
+    <filter id="scard" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="9" stdDeviation="13" flood-color="#41527a" flood-opacity=".16"/>
+    </filter>
+    <filter id="sgrain2">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".045"/></feComponentTransfer>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <clipPath id="sfr"><rect width="1480" height="450"/></clipPath>
+    <marker id="arw" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M1 1 L10 6 L1 11 z" fill="#a9853f"/>
+    </marker>
+  </defs>
+
+  <g clip-path="url(#sfr)">
+    <rect width="1480" height="450" fill="url(#sbg)"/>
+    <rect width="1480" height="450" fill="url(#sglow)"/>
+
+    <!-- 図は86%に縮めて中央へ。表示スロットの比が画面幅で変わるため、端に安全域を残す -->
+    <g transform="translate(103.6 31.5) scale(0.86)">
+
+    <!-- 資本の流れ -->
+    <g fill="none" stroke="url(#sgold)" stroke-width="3" marker-end="url(#arw)">
+      <path d="M336 225 H452"/>
+      <path d="M756 225 H872"/>
+      <path d="M1176 258 V330 H1088"/>
+    </g>
+    <!-- 支援線（金融機関・専門家） -->
+    <g fill="none" stroke="#8fa3c8" stroke-width="2" stroke-dasharray="7 7">
+      <path d="M604 156 V96 H1064"/>
+      <path d="M1024 225 H976"/>
+    </g>
+
+    <!-- 本社 -->
+    <g filter="url(#scard)">
+      <rect x="96" y="156" width="240" height="138" rx="14" fill="url(#card)" stroke="#dde5f0"/>
+    </g>
+    <rect x="96" y="156" width="6" height="138" rx="3" fill="#1f2a54"/>
+    <text x="132" y="212" font-family="Georgia,serif" font-size="30" fill="#1f2a54">日本本社</text>
+    <text x="132" y="252" font-family="system-ui,sans-serif" font-size="20" fill="#6b7590">JAPAN HQ</text>
+
+    <!-- 現地法人 -->
+    <g filter="url(#scard)">
+      <rect x="452" y="156" width="304" height="138" rx="14" fill="url(#card)" stroke="#dde5f0"/>
+    </g>
+    <rect x="452" y="156" width="6" height="138" rx="3" fill="#2c3a6e"/>
+    <text x="488" y="212" font-family="Georgia,serif" font-size="30" fill="#1f2a54">現地法人の設立</text>
+    <text x="488" y="252" font-family="system-ui,sans-serif" font-size="20" fill="#6b7590">SUBSIDIARY · ASEAN</text>
+
+    <!-- 合弁・M&A -->
+    <g filter="url(#scard)">
+      <rect x="872" y="156" width="304" height="138" rx="14" fill="#fffdf7" stroke="#e6d6b4"/>
+    </g>
+    <rect x="872" y="156" width="6" height="138" rx="3" fill="#a9853f"/>
+    <text x="908" y="212" font-family="Georgia,serif" font-size="30" fill="#1f2a54">合弁・M&amp;A</text>
+    <text x="908" y="252" font-family="system-ui,sans-serif" font-size="20" fill="#8a7448">JOINT VENTURE</text>
+
+    <!-- 少数株主でも経営権を確保 -->
+    <g filter="url(#scard)">
+      <rect x="836" y="330" width="252" height="86" rx="12" fill="url(#card)" stroke="#dde5f0"/>
+    </g>
+    <text x="864" y="368" font-family="system-ui,sans-serif" font-size="20" fill="#6b7590">種類株式の活用</text>
+    <text x="864" y="398" font-family="Georgia,serif" font-size="23" fill="#a9853f">経営権を確保</text>
+
+    <!-- 金融機関・専門家（上部の支援レイヤー） -->
+    <g filter="url(#scard)">
+      <rect x="1064" y="52" width="330" height="86" rx="12" fill="url(#card)" stroke="#dde5f0"/>
+    </g>
+    <g fill="#1f2a54">
+      <circle cx="1100" cy="95" r="5"/><circle cx="1120" cy="95" r="5"/><circle cx="1140" cy="95" r="5"/>
+    </g>
+    <text x="1162" y="103" font-family="Georgia,serif" font-size="26" fill="#1f2a54">金融機関・専門家</text>
+
+    <!-- 外資規制のチェックポイント -->
+    <g transform="translate(604 225)">
+      <circle r="34" fill="#fffdf7" stroke="#e6d6b4" stroke-width="2"/>
+      <path d="M-13 0 l9 10 l18 -20" fill="none" stroke="#a9853f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <animate attributeName="opacity" values=".85;1;.85" dur="3.2s" repeatCount="indefinite"/>
+    </g>
+    <text x="604" y="316" text-anchor="middle" font-family="system-ui,sans-serif" font-size="19" fill="#6b7590">外資規制のクリア</text>
+
+    </g>
+
+    <rect width="1480" height="450" filter="url(#sgrain2)" fill="#6f7f9c" opacity=".30"/>
+    <rect width="1480" height="450" fill="none" stroke="#7d94b8" stroke-opacity=".13" stroke-width="26" filter="url(#scard)"/>
+  </g>
+</svg>
