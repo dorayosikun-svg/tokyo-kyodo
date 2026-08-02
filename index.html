@@ -10,14 +10,19 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:site_name" content="東京響働ビジネスサポート合同会社">
+<meta name="theme-color" content="#1f2a54">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231f2a54'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%23caa864' text-anchor='middle'%3E%E9%9F%BF%3C/text%3E%3C/svg%3E">
 <meta property="og:title" content="海外ビジネスサポート｜海外進出・英文書作成支援・翻訳・研修｜東京響働ビジネスサポート合同会社">
 <meta property="og:description" content="海外進出支援、海外法令リサーチ、各種英文書等の作成サポート・翻訳、事業リスク（ビジネス上の観点）からの検討、ビジネス英語研修、ASEAN（殊にタイ）の現地人材紹介を業務委託形式でご提供。当社は法律事務所ではありません。">
 <meta property="og:url" content="https://tokyokyodo.com/">
-<meta property="og:image" content="https://tokyokyodo.com/images/hd/hero-4x5.jpg">
+<meta property="og:image" content="https://tokyokyodo.com/images/hd/band-hero.jpg">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1000">
+<meta property="og:image:alt" content="国境を越えて交わされる握手">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="海外ビジネスサポート｜東京響働ビジネスサポート合同会社">
 <meta name="twitter:description" content="海外進出・M&amp;A・現地法人設立から英文書作成・翻訳・海外ビジネス研修まで、業務委託でまるごと支援。">
-<meta name="twitter:image" content="https://tokyokyodo.com/images/hd/hero-4x5.jpg">
+<meta name="twitter:image" content="https://tokyokyodo.com/images/hd/band-hero.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -32,6 +37,20 @@
     "addressLocality": "大田区",
     "addressRegion": "東京都",
     "addressCountry": "JP"
+  },
+  "priceRange": "¥250,000〜¥600,000",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "業務委託サービス",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "海外法令・外資規制のリサーチ／市場調査報告書の作成"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "各種英文書の作成サポート及びビジネス上の観点からの事業リスクの検討"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "法務部員等に対する各種研修（ビジネス英語、新人研修等）"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "現地法人スタッフ等への本社方針説明・教育"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "各種英文ドキュメントの翻訳及び内容のご説明"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "英語での交渉・会議への同席対応"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "ASEAN（殊にタイ）における独自ネットワークを活かした現地採用等のご支援"}}
+    ]
   },
   "sameAs": []
 }
@@ -100,6 +119,15 @@ header{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.86);
 .nav-links a{color:var(--ink-soft); transition:color .2s}
 .nav-links a:hover{color:var(--navy)}
 .nav-cta{padding:10px 20px; background:var(--navy); color:#fff!important; border-radius:8px; font-size:14px}
+.sticky-cta{display:none}
+@media(max-width:820px){
+  .sticky-cta{display:block; position:fixed; left:0; right:0; bottom:0; z-index:60;
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    background:#fff; border-top:1px solid var(--line); box-shadow:0 -6px 20px rgba(26,28,35,.08)}
+  .sticky-cta a{display:block; width:100%; text-align:center; padding:14px; border-radius:12px;
+    background:var(--navy); color:#fff; font-weight:700; font-size:15px; text-decoration:none}
+  body{padding-bottom:70px}
+}
 .nav-cta:hover{background:var(--navy-2)}
 @media(max-width:720px){ .nav-links a:not(.nav-cta){display:none} }
 
@@ -884,6 +912,9 @@ footer{padding:56px 0 40px; border-top:1px solid var(--line); color:var(--ink-so
     </div>
   </div>
 </section>
+
+<!-- ============ Mobile Sticky CTA ============ -->
+<div class="sticky-cta"><a href="#contact">無料でご相談する →</a></div>
 
 <!-- ============ Footer ============ -->
 <footer>
