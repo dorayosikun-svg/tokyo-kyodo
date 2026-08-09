@@ -1,0 +1,9 @@
+# GitHub Pages へ上げるファイルの組み立て先。scripts/stage-pages.mjs が
+# 毎回作り直す一時ディレクトリで、リポジトリに入れるものではない。
+#
+# ユーザーのローカル作業ツリーには .git/info/exclude によるホワイトリスト
+# （全除外＋公開対象のみ許可）があるため、そこでは元々追跡されない。
+# しかし .git/info/exclude は clone に伝播しないため、clone 環境では
+# _pages/ が未追跡ファイルとして現れ、git add で丸ごとコミットされうる。
+# この1行はその clone 環境のための防御である（CLAUDE.md §2 の注意点）。
+_pages/

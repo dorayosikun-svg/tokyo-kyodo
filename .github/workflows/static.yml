@@ -33,11 +33,68 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      # リポジトリ全体を上げると、運用内規(CLAUDE.md)やサーバコード(server.js)まで
+      # 独自ドメインで配信される(2026-08-10 に https://tokyokyodo.com/CLAUDE.md が
+      # 200 で応答することを実測。失敗リスト No.19)。server.js の許可リストを正本に、
+      # 公開してよいファイルだけを _pages/ に組み立ててから上げる。
+      # 除外したファイルはリポジトリには残るので、クラウドセッションは
+      # 従来どおり CLAUDE.md を読める。
+      - name: Stage public files only
+        run: node scripts/stage-pages.mjs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: '_pages'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+      # 公開後の実測。ここまでの検査はすべて「リポジトリの中身」しか見ておらず、
+      # 実際に配信されているものを見ていない。とくに GitHub Pages の Source は
+      # Web UI の設定でワークフローからは制御できず（公式doc「GitHub Pages does
+      # not associate a specific workflow to the GitHub Pages settings」）、
+      # "Deploy from a branch" に戻されると上の制御はすべて無効になる。
+      # それを捕まえられるのは、この事後検証だけである（失敗リスト No.19）。
+      #
+      # これは「防止」ではなく「事後検知」。失敗した時点で既に公開されている。
+      # 独自ドメインは CDN/DNS の反映に時間差があるためリトライする。
+      - name: Verify what is actually served
+        run: |
+          set -uo pipefail
+          base="https://tokyokyodo.com"
+          fail=0
+          check() { # $1=パス  $2=期待コード
+            for i in 1 2 3 4 5 6; do
+              code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$base$1" || echo 000)
+              [ "$code" = "$2" ] && { echo "OK   $2  $1"; return 0; }
+              sleep 15
+            done
+            echo "NG   期待 $2 だが $code が返る: $1"
+            fail=1
+          }
+          # 配信されていなければならないもの
+          check "/" 200
+          check "/privacy.html" 200
+          # 配信されてはならないもの
+          check "/CLAUDE.md" 404
+          check "/server.js" 404
+          check "/package.json" 404
+          check "/scripts/check.mjs" 404
+          check "/images/README.txt" 404
+          check "/.claude/rules/00-%E8%A1%8C%E5%8B%95%E8%A6%8F%E7%B4%84.md" 404
+          # トップページの中身が生きているか（200 だけで判断しない）
+          # 本文検証にもリトライを入れる。ここだけ一発勝負だと、CDN の反映遅れで
+          # 旧版や空応答を掴んだときに「サイトは正常なのに赤くなる」。
+          # 誤報を出すセンサーは、次から無視されるようになる。
+          for needle in "images/hd/band-hero.jpg" "G-JRFCY18FPN"; do
+            found=0
+            for i in 1 2 3 4 5 6; do
+              body=$(curl -s --max-time 20 "$base/" || true)
+              case "$body" in
+                *"$needle"*) echo "OK   本文に含まれる: $needle"; found=1; break ;;
+              esac
+              sleep 15
+            done
+            [ "$found" = 1 ] || { echo "NG   本文に見当たらない: $needle"; fail=1; }
+          done
+          exit $fail

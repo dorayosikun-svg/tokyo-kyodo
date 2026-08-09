@@ -140,7 +140,81 @@ for (const f of forbidden) {
   errors.push(`${f} が公開リポジトリに追跡されています。ただちに追跡から外してください`);
 }
 
+// --- 5. 非公開であるべき追跡ファイルが、Pages に配信されない状態か ------------
+// GitHub Pages は「アップロードされた成果物」を配信する。ワークフローが
+// path: '.' でリポジトリ全体を上げていると、運用内規もサーバコードも
+// 独自ドメインに出る。2026-08-10、https://tokyokyodo.com/CLAUDE.md が 200 で
+// 応答することを実測した(失敗リスト No.19)。上の 4. は「追跡されていないこと」
+// しか見ておらず、「追跡はするが配信はしない」ファイルを守れていなかった。
+const WORKFLOW = ".github/workflows/static.yml";
+const STAGER = "scripts/stage-pages.mjs";
+
+if (!trackedAll.has(WORKFLOW)) {
+  errors.push(`${WORKFLOW} が git 管理下にありません。Pages への配信内容を検査できません`);
+} else if (!trackedAll.has(STAGER)) {
+  errors.push(`${STAGER} が git 管理下にありません。ワークフローが実行時に失敗します`);
+} else {
+  const wf = readFile(WORKFLOW);
+  const pathLine = wf.match(/uses:\s*actions\/upload-pages-artifact@[^\n]*\n[\s\S]*?path:\s*'([^']+)'/);
+  if (!pathLine) {
+    // 解析できないときは通さない（fail-closed）。
+    fail(`${WORKFLOW} の upload-pages-artifact の path を解析できませんでした。配信範囲が確認できないため止めます`);
+  }
+  if (pathLine[1] === ".") {
+    errors.push(`${WORKFLOW} がリポジトリ全体(path: '.')を Pages に上げています。運用内規やサーバコードが ${EXPECTED_DOMAIN} で配信されます`);
+  } else if (pathLine[1] !== "_pages") {
+    errors.push(`${WORKFLOW} が Pages に上げる path が '${pathLine[1]}' です。'_pages'（${STAGER} が組み立てる場所）であるべきです`);
+  }
+  // ステージング処理が実際に走ることを確認する。ここが消えると _pages が
+  // 空のままアップロードされ、サイトが壊れる。コメント行は数えない。
+  const body = wf.replace(/^\s*#.*$/gm, "");
+  if (!new RegExp(`run:\\s*node\\s+${STAGER.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`).test(body)) {
+    errors.push(`${WORKFLOW} が ${STAGER} を実行していません。配信範囲が制御されません`);
+  }
+}
+
+// GitHub Pages の Source は GitHub の Web UI 設定であり、ワークフローからは
+// 制御できない（公式doc「GitHub Pages does not associate a specific workflow
+// to the GitHub Pages settings」）。Source を "Deploy from a branch" に戻すと、
+// ここまでの検査をすべて素通りしてリポジトリ全ファイルが配信される。
+// **この検査では検出できない。** push 後に実 URL を叩いて確認すること。
+
+// --- 6. ステージングが実際に成功するか ----------------------------------------
+// 5. はワークフローの「記述」しか見ていない。server.js の許可リストが壊れて
+// stage-pages.mjs が落ちる状態でも 5. は通ってしまう。ここで実際に走らせる。
+// Actions 上で初めて失敗する状態を、push 前に検出する。
+if (trackedAll.has(STAGER)) {
+  try {
+    execFileSync("node", [STAGER], { cwd: root, stdio: ["ignore", "pipe", "pipe"] });
+  } catch (e) {
+    const detail = (e.stderr?.toString() || e.stdout?.toString() || e.message).trim();
+    errors.push(`${STAGER} が失敗します（Actions 上でデプロイが落ちます）:\n    ${detail.split("\n").join("\n    ")}`);
+  }
+}
+
+// --- 7. 配信されるが、どのページからも参照されていないファイル ----------------
+// `allowedDirs` はディレクトリ単位の許可なので、images/ に置いたものは
+// どのページからも参照されていなくても配信される。2026-08-10、掲載対象でない
+// 制作用ファイルがこの経路で配信されていたことが判明した(失敗リスト No.19)。
+// 発見の手がかりは「参照0件」だった。手作業の棚卸しは次回は行われないので、
+// 機械に毎回数えさせる。
+// 参照0件でも将来使う予定の素材はありうるため、止めずに警告にとどめる。
+const warnings = [];
+const htmlBodies = publicHtml.map((f) => readFile(f)).join("\n") + readFile("sitemap.xml");
+const dirFiles = [...trackedAll].filter((f) => allowedDirs.some((d) => `/${f}`.startsWith(d)));
+// 照合はベース名ではなく相対パス全体で行う。ベース名だと部分文字列で誤って
+// 一致する——例えば images/hero.jpg は images/hd/band-hero.jpg の一部として
+// 「参照あり」と誤判定される。実際にこの誤りで4件を見落としかけた。
+const unreferenced = dirFiles.filter((f) => !htmlBodies.includes(f));
+if (unreferenced.length) {
+  warnings.push(
+    `どのページからも参照されていないのに ${EXPECTED_DOMAIN} で配信されるファイルが ${unreferenced.length}件あります。` +
+    `公開して差し支えないか確認してください:\n    ${unreferenced.join("\n    ")}`
+  );
+}
+
 // --- 結果 --------------------------------------------------------------------
+for (const w of warnings) console.warn(`[警告] ${w}`);
 for (const e of errors) console.error(`[エラー] ${e}`);
 
 if (errors.length) {
