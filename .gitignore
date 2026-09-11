@@ -7,3 +7,11 @@
 # _pages/ が未追跡ファイルとして現れ、git add で丸ごとコミットされうる。
 # この1行はその clone 環境のための防御である（CLAUDE.md §2 の注意点）。
 _pages/
+
+# サイトに掲載しない制作用のファイル。
+# server.js の allowedDirs = ["/images/"] はディレクトリ単位の許可なので、
+# images/ に置いたものは掲載対象でなくても配信される。追跡から外すだけでは
+# `git add images/` で戻ってしまうため、ここで閉じておく。
+# 経緯は失敗リスト No.19（このリポジトリには無い）。
+images/README.txt
+images/AI生成画像/

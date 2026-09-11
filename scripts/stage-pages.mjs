@@ -46,6 +46,9 @@ const tracked = new Set(
 );
 
 const copy = (rel) => {
+  // 追跡されていないファイルは配らない。runner 上には追跡ファイルしか無いが、
+  // ローカル実行時に未追跡の下書きを紛れ込ませないための歯止めでもある。
+  if (!tracked.has(rel)) fail(`配信対象 ${rel} が git 管理下にありません`);
   const src = path.join(root, rel);
   if (!fs.existsSync(src)) fail(`配信対象 ${rel} が見つかりません`);
   const dst = path.join(dest, rel);
@@ -76,7 +79,7 @@ for (const dir of allowedDirs) {
 for (const required of ["index.html", "privacy.html", "CNAME", ".nojekyll", "robots.txt", "sitemap.xml"]) {
   if (!fs.existsSync(path.join(dest, required))) fail(`必須ファイルが _pages にありません: ${required}`);
 }
-for (const forbidden of ["CLAUDE.md", "server.js", "package.json", "package-lock.json", "scripts", ".github", ".git"]) {
+for (const forbidden of ["CLAUDE.md", "server.js", "package.json", "package-lock.json", "scripts", ".github", ".git", ".claude"]) {
   if (fs.existsSync(path.join(dest, forbidden))) fail(`非公開ファイルが _pages に含まれています: ${forbidden}`);
 }
 if (fs.readFileSync(path.join(dest, "CNAME"), "utf8").trim() !== "tokyokyodo.com") {
